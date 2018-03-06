@@ -11,7 +11,16 @@ class Hugo
 
   def write_post(post)
     old_url = post['post_url']
-    safe_title = parameterize(post['title'])
+
+    if(post['title'].to_s.empty?)
+      safe_title = 'no-title'
+    else
+      safe_title = parameterize(post['title'])
+      if(safe_title.to_s.empty?)
+        safe_title = 'no-title'
+      end
+    end
+
     post_date = post['date'].split(' ')[0]
     file_name = "#{post_date}-#{safe_title}.html"
     new_path = "/blog/#{safe_title}"
