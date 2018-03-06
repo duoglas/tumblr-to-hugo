@@ -12,3 +12,9 @@ To run it:
 - Brag about how fast you did that migration
 
 :tada:
+
+## Q&A
+1. Before run:
+`gem install httparty pry`
+
+2. fix no title problems: Post without title or no english character.
